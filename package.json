@@ -20,6 +20,7 @@
   "homepage": "https://github.com/adamjflynn/employee-tracker#readme",
   "dependencies": {
     "console.table": "^0.10.0",
+    "events": "^3.3.0",
     "express": "^4.17.1",
     "inquirer": "^8.2.0",
     "module": "^1.2.5",
