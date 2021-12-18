@@ -62,11 +62,11 @@ function initialPrompt() {
 // View Tables
 
 function viewEmployees() {
-    db.findAllEmployees()
-    .then(([employees]) => {
-        console.table(employees)
-    })
-    .then(() => initialPrompt())    
+    // db.findAllEmployees()
+    // .then(([employees]) => {
+    //     console.table(employees)
+    // })
+    // .then(() => initialPrompt())    
 };
 function viewDepartments() {
     db.findAllDept()
