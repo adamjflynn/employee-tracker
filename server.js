@@ -1,8 +1,10 @@
 const inquirer = require('inquirer');
 const mysql = require('mysql2');
 const table = require('console.table');
-const db = require('./config/connection');
-const functions = require('./utils/index');
+const db = require('./db');
+const { listenerCount } = require('events');
+const Connection = require('./db/connection');
+
 
 initialPrompt();
 
@@ -62,11 +64,11 @@ function initialPrompt() {
 // View Tables
 
 function viewEmployees() {
-    // db.findAllEmployees()
-    // .then(([employees]) => {
-    //     console.table(employees)
-    // })
-    // .then(() => initialPrompt())    
+    db.findAllEmployees()
+    .then(([employees]) => {
+        console.table(employees)
+    })
+    .then(() => initialPrompt())    
 };
 function viewDepartments() {
     db.findAllDept()
@@ -130,7 +132,7 @@ function addEmployee() {
                 //let managerId = answer.value
                 let newEmployee = {
                     manager_id: answer.managerId,
-                    role_id: roleId,
+                    roles_id: roleId,
                     first_name: firstName,
                     last_name: lastName
                     }

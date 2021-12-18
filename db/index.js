@@ -1,4 +1,4 @@
-const connection = require('../config/connection');
+const connection = require('./connection');
 
 class DB {
     constructor(connection) {
@@ -9,9 +9,9 @@ class DB {
         return this.connection.promise().query(`SELECT * FROM department`);
     };
     findAllEmployees() {
-        return this.connection.promise().query(`SELECT employee.id, employee.first_name, 
-        employee.last_name, employee.manager_id, roles.title, roles.salary, department.dept_name  
-        FROM employee LEFT JOIN roles ON employee.role_id = roles.id LEFT JOIN department on 
+        return this.connection.promise().query(`SELECT employees.id, employees.first_name, 
+        employees.last_name, employees.manager_id, roles.title, roles.salary, department.dept_name  
+        FROM employees LEFT JOIN roles ON employees.roles_id = roles.id LEFT JOIN department on 
         roles.department_id = department.id;`);
     };
     findRoles() {
@@ -27,14 +27,14 @@ class DB {
         return this.connection.promise().query(`INSERT INTO department SET ?`, department);
     };
     addEmployee(newEmployee) {
-        return this.connection.promise().query(`INSERT INTO employee SET ?`, newEmployee);
+        return this.connection.promise().query(`INSERT INTO employees SET ?`, newEmployee);
     };
     addRole(newrole) {
         return this.connection.promise().query(`INSERT INTO roles SET ?`, newrole);
     };
 
     updateEmployeeRole(employeeId, roleId) {
-        return this.connection.promise().query(`UPDATE employee SET role_id = ? WHERE id = ?`, [roleId, employeeId]);
+        return this.connection.promise().query(`UPDATE employees SET roles_id = ? WHERE id = ?`, [roleId, employeeId]);
     };
 };
 

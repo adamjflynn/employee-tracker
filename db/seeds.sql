@@ -14,7 +14,7 @@ VALUES
     (4, 'Account Executive', 90000, 4),
     (5, 'HR Manager', 75000, 5);
 
-INSERT INTO employees (first_name, last_name, role_id, manager_id)
+INSERT INTO employees (first_name, last_name, roles_id, manager_id)
 VALUES 
     ('Adam', 'Flynn', 3, 1),
     ('Clark', 'Griswold', 4, 2),
@@ -25,7 +25,7 @@ VALUES
     ('George', 'Bailey', 1, NULL),
     ('Ebeneezer', 'Scrooge', 1, NULL);
 
-INSERT INTO manager
+INSERT INTO manager (first_name, last_name, id)
 VALUES
     ('George', 'Bailey', 1),
     ('Ebeneezer', 'Scrooge', 2);
