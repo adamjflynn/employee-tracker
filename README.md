@@ -34,7 +34,7 @@
 
  To view the application being tested click the link below
 
-![link to the screen recording of the app in use](https://watch.screencastify.com/v/m1lYcus3MHagdupkigcr)
+[link to the screen recording of the app in use](https://watch.screencastify.com/v/m1lYcus3MHagdupkigcr)
 
   ## Questions
 
